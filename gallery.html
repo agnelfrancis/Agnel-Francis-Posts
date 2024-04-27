@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Agnel Francis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet"> <!-- Space Mono font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link rel="icon" href="./images/AF.png" type="image/png"> <!-- Favicon -->
+    <style>
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #222;
+            padding: 10px 0;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #ddd;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+        }
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-out;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .gallery img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px;
+            transition: transform 0.3s ease-in-out, opacity 0.5s ease-out;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            opacity: 0; /* Initially invisible */
+        }
+        .gallery img.loaded {
+            opacity: 1; /* Fade in when loaded */
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .loader-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            text-align: center;
+            display: none;
+        }
+        .loader {
+            border: 8px solid #fff; /* Changed spinner color to white */
+            border-radius: 50%;
+            border-top: 8px solid #3498db;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+            display: block;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Query for Phones */
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar" id="navbar">
+    <a href="index.html">Home</a>
+</div>
+
+<div class="loader-container" id="loader-container">
+    <div class="loader" id="loader"></div>
+</div>
+
+<div class="container" id="content">
+    <h1>Gallery</h1>
+    <div class="gallery">
+        <img src="./images/FA Cup Final (2).png" alt="FA Cup Final Image 2" class="loaded">
+        <img src="./images/FA Cup Final (3).png" alt="FA Cup Final Image 3" class="loaded">
+        <img src="./images/FA Cup Final (4).png" alt="FA Cup Final Image 4" class="loaded">
+        <img src="./images/FA Cup Final (5).png" alt="FA Cup Final Image 5" class="loaded">
+        <img src="./images/FA Cup Final (6).png" alt="FA Cup Final Image 6" class="loaded">
+        <img src="./images/FA Cup Final (7).png" alt="FA Cup Final Image 7" class="loaded">
+        <img src="./images/FA Cup Final (8).png" alt="FA Cup Final Image 8" class="loaded">
+        <img src="./images/FA Cup Final (9).png" alt="FA Cup Final Image 9" class="loaded">
+        <img src="./images/FA Cup Final (10).png" alt="FA Cup Final Image 10" class="loaded">
+        <img src="./images/FA Cup Final (11).png" alt="FA Cup Final Image 11" class="loaded">
+        <img src="./images/FA Cup Final (12).png" alt="FA Cup Final Image 12" class="loaded">
+        <img src="./images/FA Cup Final (13).png" alt="FA Cup Final Image 13" class="loaded">
+        <img src="./images/FA Cup Final (14).png" alt="FA Cup Final Image 14" class="loaded">
+        <img src="./images/FA Cup Final (15).png" alt="FA Cup Final Image 15" class="loaded">
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        document.getElementById("loader-container").style.display = "none";
+        document.getElementById("content").style.opacity = "1";
+        document.getElementById("content").style.pointerEvents = "auto";
+    };
+</script>
+
+</body>
+</html>
