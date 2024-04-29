@@ -6,7 +6,7 @@
     <title>Agnel Francis - Graphic Designer & Football Enthusiast</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet"> <!-- Space Mono font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
-    <link rel="icon" href="./images/AF.png" type="image/png"> <!-- Favicon -->
+    <link rel="icon" href="./images/profile.jpg" type="image/jpg"> <!-- Favicon -->
     <style>
         body {
             font-family: 'Space Mono', monospace;
@@ -44,8 +44,8 @@
             text-align: center;
         }
         h1 {
-            font-size: 4rem;
-            letter-spacing: 5px;
+            font-size: 3rem;
+            letter-spacing: 3px;
             margin-bottom: 20px;
             text-transform: uppercase;
             color: #fff;
@@ -53,7 +53,7 @@
             animation: fadeInDown 1s ease-out;
         }
         h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #fff;
             margin-bottom: 20px;
             animation: fadeInUp 1s ease-out;
@@ -66,7 +66,7 @@
         }
         .button {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 12px 24px;
             font-size: 1.2rem;
             background-color: #fff;
             color: #111;
@@ -83,10 +83,10 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 40px;
         }
         .gallery img {
-            max-width: 300px;
+            max-width: 250px;
             width: 100%;
             height: auto;
             border-radius: 10px;
@@ -97,6 +97,7 @@
         }
         .gallery img.loaded {
             opacity: 1; /* Fade in when loaded */
+            animation: fadeIn 1s ease-out;
         }
         .gallery img:hover {
             transform: scale(1.05);
@@ -180,13 +181,24 @@
             }
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Media Query for Phones */
         @media only screen and (max-width: 600px) {
             .container {
                 padding: 80px 10px 20px;
             }
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
                 margin-bottom: 10px;
             }
             h2 {
@@ -219,6 +231,7 @@
 <div class="loader" id="loader"></div>
 
 <div class="container" id="home">
+    <img src="./images/profile.jpg" alt="Profile Image" style="border-radius: 50%; width: 150px;">
     <h1>Agnel Francis</h1>
     <h2>Graphic Designer & Football Enthusiast</h2>
     <p>Welcome to my website! Here, you can find updates on my latest graphic design work and stay informed with the latest football news, scores, and updates.</p>
