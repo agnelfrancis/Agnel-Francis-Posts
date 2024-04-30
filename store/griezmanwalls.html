@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griezmann Wallpapers - Free Download</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet"> <!-- Space Mono font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link rel="icon" href="./images/profile.jpg" type="image/jpg"> <!-- Favicon -->
+    <style>
+        /* CSS styles */
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #222;
+            padding: 10px 20px;
+            z-index: 1000;
+            transition: top 0.3s;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #ddd;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            background-color: #fff;
+            color: #111;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #ddd;
+        }
+        .product-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .product {
+            position: relative;
+            margin: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #fff;
+            border-radius: 20px;
+            transition: transform 0.3s;
+            flex: 1;
+            max-width: 300px;
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 20px;
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-10px);
+        }
+        .product-info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1;
+        }
+        .product:hover .product-info {
+            opacity: 1;
+        }
+        .product-info h2, .product-info p {
+            margin: 0;
+            padding: 0;
+        }
+        .download-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1;
+        }
+        .product:hover .download-icon {
+            opacity: 1;
+        }
+        .preview {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .preview img {
+            max-width: 300px;
+            border-radius: 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar" id="navbar">
+    <!-- Navbar content -->
+</div>
+
+<div class="container" id="greizmanwalls">
+    <h1>Griezmann Wallpapers</h1>
+    <div class="product-container">
+        <div class="product" onclick="downloadImage('atleti_wallpaper.png')">
+            <img src="../images/griezman images/atleti_wallpaper.png" alt="Griezmann Club Wallpaper">
+            <div class="product-info">
+                <h2>Griezmann Club Wallpaper</h2>
+                <p>Download this wallpaper featuring Griezmann in his club colors!</p>
+            </div>
+            <i class="fas fa-download download-icon"></i>
+        </div>
+        <div class="product" onclick="downloadImage('france_wallpaper.png')">
+            <img src="../images/griezman images/france_wallpaper.png" alt="Griezmann National Wallpaper">
+            <div class="product-info">
+                <h2>Griezmann National Wallpaper</h2>
+                <p>Download this wallpaper featuring Griezmann in his national team colors!</p>
+            </div>
+            <i class="fas fa-download download-icon"></i>
+        </div>
+    </div>
+    <div class="download-button">
+        <a href="#" class="button" onclick="downloadWallpapers()"><i class="fas fa-download"></i> Download for Free</a>
+    </div>
+</div>
+
+<script>
+    function downloadImage(imageName) {
+        const link = document.createElement('a');
+        link.href = '../images/griezman images/' + imageName;
+        link.download = imageName;
+        link.click();
+    }
+
+    function downloadWallpapers() {
+        const link = document.createElement('a');
+        link.href = '../images/griezman images/griezmann_wallpaper_pack.zip';
+        link.download = 'griezmann_wallpaper_pack.zip';
+        link.click();
+    }
+</script>
+
+</body>
+</html>
